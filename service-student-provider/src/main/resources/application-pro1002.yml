@@ -1,0 +1,39 @@
+spring:
+  #应用名称
+  application:
+    name: student-provider
+    #数据库连接池
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud
+    username: root
+    password: 1234
+    type: com.alibaba.druid.pool.DruidDataSource
+    #jpa配置
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  #web地址
+server:
+  port: 1002
+  #eureka 客户端配置
+eureka:
+  instance:
+    hostname: eureka_Server1  #eureka客户端主机实例名称
+    #appname: student-provider  #客户端服务名
+    instance-id: 192.168.88.106:1002 #客户端实例名称
+    prefer-ip-address: true #显示IP
+  client:
+    service-url:
+      defaultZone: http://server1:3001/eureka   #把服务注册到eureka注册中心
+    #defaultZone: http://localhost1.com:2001/,http://localhost2.com:2002/,http://localhost3.com:2003/
+#eureka info 页面
+info:
+  groupId: ${project.groupId}
+  artifactId: ${project.artifactId}
+  version: ${project.version}
+  provider: student-provider_1002
+  number: 15282648585
+myInfo:
+  name: 服务提供者2

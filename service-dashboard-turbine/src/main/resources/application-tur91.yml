@@ -1,0 +1,22 @@
+server:
+  port: 91
+spring:
+  application:
+    name: hystrix-dashboard-turbine
+eureka:
+#  instance:
+#    prefer-ip-address: true
+#    instance-id: localshot:91
+#    hostname: server1 #服务注册中心实例的主机名
+  client:
+    service-url:
+      defaultZone: http://server1:3001/eureka/
+turbine:
+  app-config: student-provider
+  cluster-name-expression: "'default'"
+info:
+  groupId: ${project.groupId}
+  artifactId: ${project.artifactId}
+  version: ${project.version}
+  provider: turbine_91
+  number: 15282648585

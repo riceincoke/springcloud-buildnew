@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: student-consumer
+server:
+  port: 80
+  context-path: /
+eureka:
+  instance:
+    hostname: server1  #eureka客户端主机实例名称
+    #appname: student-consumer  #客户端服务名
+    instance-id: localhsot:80 #客户端实例名称
+    prefer-ip-address: true #显示IP
+  client:
+    service-url:
+      defaultZone: http://server1:3001/eureka   #把服务注册到eureka注册中心
+      #defaultZone: http://localhost1.com:2001/,http://localhost2.com:2002/,http://localhost3.com:2003/
+#eureka info 页面
+info:
+  groupId: ${project.groupId}
+  artifactId: ${project.artifactId}
+  version: ${project.version}
+  provider: hystrix-consumer80
+  number: 15282648585
+
+

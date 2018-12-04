@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: eureka_Server1
+server:
+  port: 3001
+eureka:
+  instance:
+    hostname: eureka_Server1 #服务注册中心实例的名字
+    # appname: eureka_Server
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false #注册自身
+    fetch-registry: false #是否检索服务
+    service-url:
+        defaultZone: http://server1:3001/eureka/,http://server2:3002/eureka/ #指定服务注册中心位置
+    #defaultZone: http://localhost1.com:2001/eureka/,http://localhost2.com:2002/eureka/,http://localhost3.com:2003/eureka/
+  server:
+    enable-self-preservation: false #保护机制关闭
+#eureka info 页面
+info:
+  groupId: ${project.groupId}
+  artifactId: ${project.artifactId}
+  version: ${project.version}
+  provider: eureka_server3001
+  number: 15282648585

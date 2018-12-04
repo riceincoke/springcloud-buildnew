@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service-commmon" />
+        <module name="service-dashboard-turbine" />
+        <module name="service-eureka-server" />
+        <module name="service-hystrix-dashboard" />
+        <module name="service-student-consumer" />
+        <module name="service-student-hystrix-provider" />
+        <module name="service-student-provider" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="service-discory" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
