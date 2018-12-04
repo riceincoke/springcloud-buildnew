@@ -66,7 +66,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.5.11.RELEASE</version>
                 <configuration><!-- 指定该Main Class为全局的唯一入口 -->
                     <classifier>exec</classifier>
                     <mainClass>providercore.ProviderApp</mainClass>
