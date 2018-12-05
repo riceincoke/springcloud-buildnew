@@ -10,9 +10,9 @@
         <module name="service-dashboard-turbine" />
         <module name="service-eureka-server" />
         <module name="service-hystrix-dashboard" />
-        <module name="service-student-consumer" />
         <module name="service-student-hystrix-provider" />
         <module name="service-student-provider" />
+        <module name="service-student-ribbon-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">

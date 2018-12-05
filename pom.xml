@@ -12,7 +12,7 @@
         <module>service-eureka-server</module>
         <module>service-student-provider</module>
         <module>service-commmon</module>
-        <module>service-student-consumer</module>
+        <module>service-student-ribbon-consumer</module>
         <module>service-student-hystrix-provider</module>
         <module>service-hystrix-dashboard</module>
         <module>service-dashboard-turbine</module>

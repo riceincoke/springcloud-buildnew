@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: student-hystrix-consumer
+server:
+  port: 81
+  context-path: /
+eureka:
+  instance:
+    hostname: ${spring.cloud.client.ipAddress}  #eureka客户端主机实例名称
+    #appname: student-consumer  #客户端服务名
+    instance-id: ${spring.application.name}-${spring.cloud.client.ipAddress}:${server.port} #客户端实例名称
+    prefer-ip-address: true #显示IP
+  client:
+    service-url:
+      defaultZone: http://${spring.cloud.client.ipAddress}:3001/eureka/
+      #defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/   #把服务注册到eureka注册中心
+#actutor info 页面
+info:
+  groupId: ${project.groupId}
+  artifactId: ${project.artifactId}
+  version: ${project.version}
+  provider: ${eureka.instance.instance-id}
+  number: 15282648585
+appLoaction: http://student-hystrix-provider
+management:
+  security:
+    enabled: false
