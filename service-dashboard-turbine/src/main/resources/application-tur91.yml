@@ -1,22 +1,23 @@
 server:
   port: 91
+  context-path: /
 spring:
   application:
     name: hystrix-dashboard-turbine
 eureka:
-#  instance:
-#    prefer-ip-address: true
-#    instance-id: localshot:91
-#    hostname: server1 #服务注册中心实例的主机名
   client:
     service-url:
-      defaultZone: http://server1:3001/eureka/
+      defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/
 turbine:
-  app-config: student-provider
+  app-config: student-hystrix-provider
   cluster-name-expression: "'default'"
+  #combine-host-port: true
 info:
   groupId: ${project.groupId}
   artifactId: ${project.artifactId}
   version: ${project.version}
-  provider: turbine_91
+  provider: turbine_${server.port}
   number: 15282648585
+management:
+  security:
+    enabled: false

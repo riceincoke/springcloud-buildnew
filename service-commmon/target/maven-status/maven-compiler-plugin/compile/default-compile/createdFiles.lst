@@ -1,0 +1,4 @@
+commoncore\entity\Student.class
+commoncore\hystrix\StudentFallBackFactory.class
+commoncore\hystrix\StudentFallBackFactory$1.class
+commoncore\feginService\StudentClientService.class

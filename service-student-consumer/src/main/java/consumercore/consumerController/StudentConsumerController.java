@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping("/student")
 public class StudentConsumerController {
    @Value("${info.provider}") private String appName;
-    private static final String PRE_HOST = "http://student-provider";
+    @Value("${appLoaction}") private  String PRE_HOST;
     @Autowired
     private RestTemplate restTemplate;
 

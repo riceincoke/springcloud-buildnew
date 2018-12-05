@@ -1,11 +1,11 @@
 #应用名称
 spring:
   application:
-    name: student-provider
+    name: student-hystrix-provider
   #数据库连接池
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springcloud
+    url: jdbc:mysql://192.168.88.104:3306/springcloud
     username: root
     password: 1234
     type: com.alibaba.druid.pool.DruidDataSource
@@ -20,24 +20,25 @@ server:
   #eureka 客户端配置
 eureka:
   instance:
-    hostname: server1  #eureka客户端主机实例名称
-    instance-id: localhost:4001 #客户端实例名称
+    hostname: ${spring.cloud.client.ipAddress}  #eureka客户端主机实例名称
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port} #客户端实例名称
     prefer-ip-address: true #显示Ip
     #lease-renewal-interval-in-seconds: 30 #心跳时间
     #lease-expiration-duration-in-seconds: 30 #服务失效时间
+    appname: student-hystrix-provider
   client:
     service-url:
-      defaultZone: http://server1:3001/eureka/   #把服务注册到eureka注册中心
+      defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/   #把服务注册到eureka注册中心
       #defaultZone: http://localhost1.com:2001/,http://localhost2.com:2002/,http://localhost3.com:2003/
 #eureka info 页面
 info:
   groupId: ${project.groupId}
   artifactId: ${project.artifactId}
   version: ${project.version}
-  provider: hystrix-student-provider4001
+  provider: ${spring.cloud.client.ipAddress}hystrix-student-provider${server.port}
   number: 15282648585
 myinfo:
-   name: 熔断服务提供者1
+   name: 熔断服务提供者_${server.port}
 #security:
 #  user:
 #    name: admin
@@ -45,4 +46,7 @@ myinfo:
 ##management:
 ##  security:
 ##    enabled: false
+management:
+  security:
+    enabled: false
 ##    roles: admin

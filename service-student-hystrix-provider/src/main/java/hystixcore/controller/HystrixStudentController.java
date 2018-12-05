@@ -1,11 +1,14 @@
 package hystixcore.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import commoncore.entity.Student;
 import hystixcore.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -45,8 +48,16 @@ public class HystrixStudentController {
      * 配置超时时间
      **/
     @GetMapping(value = "/getInfo")
+    @HystrixCommand(fallbackMethod = "fallBack",commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "2000")})
     public Map<String,Object> getInfo() throws InterruptedException {
         Thread.sleep(3000);
         return studentService.getInfo();
+    }
+    public Map<String, Object> fallBack() {
+        Map<String,Object> map = new HashMap<>(3);
+        map.put("tips:","连接超时" );
+        map.put("attention", "降级方法");
+        map.put("info:",myInfo+"返回该数据" );
+        return map;
     }
 }
