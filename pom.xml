@@ -16,14 +16,13 @@
         <module>service-student-hystrix-provider</module>
         <module>service-hystrix-dashboard</module>
         <module>service-dashboard-turbine</module>
+        <module>service-feign-consumer</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <cloud.version>Edgware.SR3</cloud.version>
-        <boot.version>1.5.10.RELEASE</boot.version>
     </properties>
     <!--导入pom 规范jar包版本-->
     <dependencyManagement>
@@ -31,7 +30,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${cloud.version}</version>
+                <version>Edgware.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -39,7 +38,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${boot.version}</version>
+                <version>1.5.10.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

@@ -1,4 +1,5 @@
 commoncore\entity\Student.class
-commoncore\hystrix\StudentFallBackFactory.class
-commoncore\hystrix\StudentFallBackFactory$1.class
-commoncore\feginService\StudentClientService.class
+commoncore\feignService\StudentClientService.class
+commoncore\feignService\StudentFallBackFactory$1.class
+commoncore\serviceApi\StudentServiceApi.class
+commoncore\feignService\StudentFallBackFactory.class

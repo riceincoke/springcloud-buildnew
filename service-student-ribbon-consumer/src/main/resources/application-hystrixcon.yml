@@ -1,6 +1,10 @@
 spring:
   application:
     name: student-hystrix-consumer
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
 server:
   port: 81
   context-path: /

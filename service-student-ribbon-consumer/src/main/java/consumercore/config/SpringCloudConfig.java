@@ -20,6 +20,10 @@ public class SpringCloudConfig {
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
+    /*@Bean
+    public IPing ribbonIPing(){
+        return  new PingUrl();
+    }*/
     /**
      * desc: 自定义重试策略负载均衡
      **/

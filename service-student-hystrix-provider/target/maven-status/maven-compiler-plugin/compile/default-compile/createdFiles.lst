@@ -1,5 +1,0 @@
-hystixcore\services\StudentService.class
-hystixcore\HystrixProviderApp.class
-hystixcore\services\IService.class
-hystixcore\dao\StudentRepository.class
-hystixcore\controller\HystrixStudentController.class

@@ -51,8 +51,9 @@ public class StudentService implements IService<Student> {
     @Override
     public Map<String, Object> getInfo() {
         Map<String,Object> map = new HashMap<>(3);
-        map.put("tips:","this is a map tip" );
-        map.put("info:","带熔断的student provider 返回该数据" );
+        map.put("tips:","调用了带熔断机制的服务提供者" );
+        map.put("info:","模拟超时3秒" );
+        map.put("info:","【student-hystrix-provider】 返回该数据" );
         map.put("服务者：", name);
         return map;
     }

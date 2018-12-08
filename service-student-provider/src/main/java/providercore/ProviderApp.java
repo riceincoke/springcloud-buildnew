@@ -12,7 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @createTime 2018-11-29-23:53
  */
 @SpringBootApplication
-@EntityScan(basePackages={"commoncore.entity"})
+@EntityScan(basePackages={"commoncore"})
 @EnableEurekaClient
 public class ProviderApp {
     public static void main(String[] args){

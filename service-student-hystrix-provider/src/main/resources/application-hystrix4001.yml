@@ -15,9 +15,6 @@ spring:
       ddl-auto: update
     show-sql: true
   #web地址
-server:
-  port: 0
-  #eureka 客户端配置
 eureka:
   instance:
     #hostname:  #主机名，默认操作系统的主机名
@@ -41,7 +38,7 @@ info:
   provider: ${eureka.instance.instance-id}
   number: 15282648585
 myinfo:
-  name: 熔断服务提供者_${server.port}
+  name: ${spring.application.name}-${server.port}
 #security:
 #  user:
 #    name: admin
@@ -49,7 +46,16 @@ myinfo:
 ##management:
 ##  security:
 ##    enabled: false
-management:
-  security:
-    enabled: false
 ##    roles: admin
+server:
+  servlet:
+    path: /
+  port: 0
+management:
+  endpoint:
+    health:
+      enabled: true
+    web:
+      exposure:
+        # spring-boot-starter-actuator 2.0版本以上得这么配置，将接口暴露出来，如果要暴露全部节点使用include: "*"
+        include: "*"

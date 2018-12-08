@@ -1,15 +1,15 @@
 server:
-  port: 91
+  port: 92
   context-path: /
 spring:
   application:
-    name: hystrix-dashboard-turbine
+    name: commoncore.entity.hystrix-dashboard-turbine
 eureka:
   client:
     service-url:
       defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/
 turbine:
-  app-config: student-hystrix-provider
+  app-config: student-commoncore.entity.hystrix-provider
   cluster-name-expression: "'default'"
   #combine-host-port: true
 info:

@@ -9,14 +9,13 @@
         <module name="service-commmon" />
         <module name="service-dashboard-turbine" />
         <module name="service-eureka-server" />
+        <module name="service-feign-consumer" />
         <module name="service-hystrix-dashboard" />
         <module name="service-student-hystrix-provider" />
         <module name="service-student-provider" />
         <module name="service-student-ribbon-consumer" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
-      <module name="service-discory" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8" />
   </component>
 </project>

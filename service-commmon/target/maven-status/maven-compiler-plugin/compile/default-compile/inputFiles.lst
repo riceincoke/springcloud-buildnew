@@ -1,3 +1,4 @@
-F:\intellj_idea_WorkSpaces\springcloudenv\service-commmon\src\main\java\commoncore\hystrix\StudentFallBackFactory.java
+F:\intellj_idea_WorkSpaces\springcloudenv\service-commmon\src\main\java\commoncore\serviceApi\StudentServiceApi.java
+F:\intellj_idea_WorkSpaces\springcloudenv\service-commmon\src\main\java\commoncore\feignService\StudentClientService.java
 F:\intellj_idea_WorkSpaces\springcloudenv\service-commmon\src\main\java\commoncore\entity\Student.java
-F:\intellj_idea_WorkSpaces\springcloudenv\service-commmon\src\main\java\commoncore\feginService\StudentClientService.java
+F:\intellj_idea_WorkSpaces\springcloudenv\service-commmon\src\main\java\commoncore\feignService\StudentFallBackFactory.java

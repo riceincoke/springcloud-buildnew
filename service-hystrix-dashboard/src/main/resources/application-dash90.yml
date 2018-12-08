@@ -1,6 +1,6 @@
 spring:
   application:
-    name: hystrix-dashboard
+    name: commoncore.entity.hystrix-dashboard
 server:
   port: 90
   context-path: /

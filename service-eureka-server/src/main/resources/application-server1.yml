@@ -13,11 +13,13 @@ eureka:
     register-with-eureka: false #注册自身
     fetch-registry: false #是否检索服务
     service-url:
-        defaultZone: http://${spring.cloud.client.ipAddress}:3001/eureka/
-       # defaultZone: http://${spring.cloud.client.ipAddress}:3001/eureka/,http://192.168.88.106:3001/eureka/ #指定服务注册中心位置
+       defaultZone: http://${spring.cloud.client.ipAddress}:3001/eureka/
+      #defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/ #指定服务注册中心位置
     #defaultZone: http://localhost1.com:2001/eureka/,http://localhost2.com:2002/eureka/,http://localhost3.com:2003/eureka/
   server:
     enable-self-preservation: false #保护机制关闭
+    response-cache-auto-expiration-in-seconds: 90
+    eviction-interval-timer-in-ms: 10000
 #eureka info 页面
 info:
   groupId: ${project.groupId}
