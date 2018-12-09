@@ -14,6 +14,7 @@
         <module name="service-student-hystrix-provider" />
         <module name="service-student-provider" />
         <module name="service-student-ribbon-consumer" />
+        <module name="service-zuul-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8" />

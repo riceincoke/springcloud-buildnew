@@ -19,6 +19,7 @@ eureka:
   server:
     enable-self-preservation: false #保护机制关闭
     response-cache-auto-expiration-in-seconds: 90
+    #10秒刷新一次缓存
     eviction-interval-timer-in-ms: 10000
 #eureka info 页面
 info:

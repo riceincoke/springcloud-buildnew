@@ -14,7 +14,13 @@ eureka:
     #appname: student-consumer  #客户端服务名
     instance-id: ${spring.application.name}-${spring.cloud.client.ipAddress}:${server.port} #客户端实例名称
     prefer-ip-address: true #显示IP
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
   client:
+    #拉取注册中心实例间隔
+    eureka.client.registry-fetch-interval-seconds: 10
+    #轮训eureka服务端地址更改的间隔时间（配合springcloud config）
+    eureka.client.eureka-service-url-poll-interval-seconds: 300
     service-url:
       defaultZone: http://${spring.cloud.client.ipAddress}:3001/eureka/
       #defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/   #把服务注册到eureka注册中心

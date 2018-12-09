@@ -21,8 +21,8 @@ eureka:
     #appname: student-provider  #客户端服务名 默认applicationName
     instance-id: ${spring.application.name}-${spring.cloud.client.ipAddress}:${random.int(500,1000)} #客户端实例名称
     prefer-ip-address: true #显示Ip
-    lease-renewal-interval-in-seconds: 30 #心跳时间
-    lease-expiration-duration-in-seconds: 60 #服务超时失效时间
+    lease-renewal-interval-in-seconds: 10 #心跳时间
+    lease-expiration-duration-in-seconds: 30 #服务超时失效时间
   client:
     healthcheck:
       enabled: true
@@ -30,6 +30,11 @@ eureka:
       defaultZone: http://${spring.cloud.client.ipAddress}:3001/eureka/
       #defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/   #把服务注册到eureka注册中心
       #defaultZone: http://localhost1.com:2001/,http://localhost2.com:2002/,http://localhost3.com:2003/
+    initial-instance-info-replication-interval-seconds: 10
+    #拉取注册中心实例间隔
+    registry-fetch-interval-seconds: 10
+    #轮训eureka服务端地址更改的间隔时间（配合springcloud config）
+    eureka-service-url-poll-interval-seconds: 300
 #actutor info 页面
 info:
   groupId: ${project.groupId}
@@ -59,3 +64,5 @@ management:
       exposure:
         # spring-boot-starter-actuator 2.0版本以上得这么配置，将接口暴露出来，如果要暴露全部节点使用include: "*"
         include: "*"
+  security:
+    enabled: false

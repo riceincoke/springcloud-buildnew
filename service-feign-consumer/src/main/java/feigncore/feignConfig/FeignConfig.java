@@ -1,7 +1,7 @@
 package feigncore.feignConfig;
 
-import com.netflix.loadbalancer.BestAvailableRule;
 import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RetryRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,6 +14,6 @@ import org.springframework.context.annotation.Configuration;
 public class FeignConfig {
     @Bean
     public IRule getIRule() {
-        return new BestAvailableRule();
+        return new RetryRule();
     }
 }

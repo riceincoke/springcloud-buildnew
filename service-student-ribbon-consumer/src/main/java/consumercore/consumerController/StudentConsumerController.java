@@ -1,3 +1,4 @@
+/*
 package consumercore.consumerController;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -19,11 +20,13 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+*/
 /**
  * @author 一杯咖啡
  * @desc 服务消费者
  * @createTime 2018-12-01-15:31
- */
+ *//*
+
 @RestController
 @RequestMapping("/student")
 public class StudentConsumerController {
@@ -41,9 +44,11 @@ public class StudentConsumerController {
         return restTemplate.getForObject(PRE_HOST + "/provider/find/" + id, Student.class);
     }
 
-    /**
+    */
+/**
      * desc:熔断降级
-     **/
+     **//*
+
     public Student fallBack(@PathVariable(value = "id") int id) {
         Student student = new Student();
         student.setId(id);
@@ -52,9 +57,11 @@ public class StudentConsumerController {
         return student;
     }
 
-    /**
+    */
+/**
      * desc: 查询所有
-     **/
+     **//*
+
     @GetMapping(value = "/findAll")
     //@HystrixCommand(commandKey = "find_all", groupKey = "consumer", threadPoolKey = "findAll", fallbackMethod = "fallAll")
     //@CacheResult
@@ -69,18 +76,22 @@ public class StudentConsumerController {
         } catch (TimeoutException e) {
             return null;
         }
-        /*Observable<List<Student>> my = this.findAllByObservable();
+        */
+/*Observable<List<Student>> my = this.findAllByObservable();
         Iterator<List<Student>> it = my.toBlocking().getIterator();
         Map map = new HashMap(3);
         while (it.hasNext()){
            map.put("ssss----",it.next());
        }
-        return map;*/
+        return map;*//*
+
     }
 
-    /**
+    */
+/**
      * desc: 异步发送请求
-     **/
+     **//*
+
     @HystrixCommand(commandKey = "cacheAll",groupKey = "consumer", threadPoolKey = "findAll",
             fallbackMethod = "fallAll", commandProperties = @HystrixProperty(name="requestCache.enabled",value = "true"))
     @CacheResult
@@ -109,9 +120,11 @@ public class StudentConsumerController {
         };
     }
 
-    /**
+    */
+/**
      * desc: 订阅者模式，可以返回多个结果存入obserable对象中
-     **/
+     **//*
+
     @HystrixCommand(observableExecutionMode = ObservableExecutionMode.LAZY, groupKey = "consumer", threadPoolKey = "findAll", fallbackMethod = "fallAll")
     public Observable<List<Student>> findAllByObservable() {
         return Observable.create(subscriber -> {
@@ -164,3 +177,4 @@ public class StudentConsumerController {
         return map;
     }
 }
+*/

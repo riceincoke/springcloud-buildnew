@@ -2,6 +2,9 @@ package feigncore.controllers;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheKey;
+import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheRemove;
+import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheResult;
 import commoncore.entity.Student;
 import commoncore.feignService.StudentClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +29,8 @@ public class FeignController {
     private String appName;
 
     @GetMapping("find/{id}")
-    @HystrixCommand
+    @HystrixCommand(threadPoolKey = "findOne",groupKey = "feign-consumer")
+    //@CacheResult
     public Student getStudent(@PathVariable(value = "id") int id) {
         System.out.println("getStudent 方法调用");
         return studentClientService.findById(id);
@@ -37,22 +41,23 @@ public class FeignController {
      * desc: 查询所有
      **/
     @GetMapping(value = "findAll")
-    @HystrixCommand(commandKey = "find_all", groupKey = "consumer", threadPoolKey = "findAll")
+    @HystrixCommand(groupKey = "findAll", threadPoolKey = "feign-consumer")
+    //@CacheResult
     public List<Student> findAll() {
         System.out.println("findall 方法调用");
         return studentClientService.findAll();
     }
 
     @GetMapping(value = "delete/{id}")
-    @HystrixCommand
+    @HystrixCommand(threadPoolKey = "delete",groupKey = "feign-consumer")
     public boolean deleteOne(@PathVariable(value = "id") int id) {
         System.out.println("delete 方法调用");
         return studentClientService.deleteOne(id);
     }
 
     @GetMapping(value = "save")
-    @HystrixCommand
-    //@CacheRemove(cacheKeyMethod = "findAllByAsync",commandKey = )
+    @HystrixCommand(threadPoolKey = "save",groupKey = "feign-consumer")
+    //@CacheRemove(commandKey = "findOne")
     public boolean insertOne() {
         System.out.println("插入 方法调用");
         Student student;
