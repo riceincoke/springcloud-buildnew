@@ -36,7 +36,7 @@ public class StudentHystrixConsumerController implements StudentConsumerApi {
 
 
     @Override
-    public Student findById(int id) {
+    public Student providerFindById(int id) {
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
@@ -46,7 +46,7 @@ public class StudentHystrixConsumerController implements StudentConsumerApi {
     }
 
     @Override
-    public List<Student> findAll() {
+    public List<Student> providerFindAll() {
         Future<List<Student>> list = this.findAllByAsync();
         try {
             return list.get(1, TimeUnit.SECONDS);
@@ -90,12 +90,13 @@ public class StudentHystrixConsumerController implements StudentConsumerApi {
     }
 
     @Override
-    public boolean deleteOne(int id) {
+    public boolean providerDeleteOne(int id) {
         return restTemplate.getForObject(PRE_HOST + "/provider/delete/" + id, Boolean.class);
     }
 
     @Override
-    public boolean insertOne(Student student) {
+    public boolean providerInsertOne() {
+        Student student=null;
         student = new Student();
         student.setGrade("一年级");
         student.setName("你是");
@@ -103,7 +104,7 @@ public class StudentHystrixConsumerController implements StudentConsumerApi {
     }
 
     @Override
-    public Map getInfo() {
+    public Map getProviderInfo() {
         return restTemplate.getForObject(PRE_HOST + "/provider/getInfo/", Map.class);
     }
 }

@@ -22,8 +22,8 @@ eureka:
     #轮训eureka服务端地址更改的间隔时间（配合springcloud config）
     eureka.client.eureka-service-url-poll-interval-seconds: 300
     service-url:
-      defaultZone: http://${spring.cloud.client.ipAddress}:3001/eureka/
-      #defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/   #把服务注册到eureka注册中心
+      #defaultZone: http://${spring.cloud.client.ipAddress}:3001/eureka/
+      defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/   #把服务注册到eureka注册中心
 #actutor info 页面
 info:
   groupId: ${project.groupId}

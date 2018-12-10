@@ -1,5 +1,0 @@
-commoncore\entity\Student.class
-commoncore\feignService\StudentClientService.class
-commoncore\feignService\StudentFallBackFactory$1.class
-commoncore\serviceApi\StudentServiceApi.class
-commoncore\feignService\StudentFallBackFactory.class

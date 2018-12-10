@@ -18,6 +18,7 @@
         <module>service-dashboard-turbine</module>
         <module>service-feign-consumer</module>
         <module>service-zuul-api</module>
+        <module>service-config-server</module>
     </modules>
 
     <properties>

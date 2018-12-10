@@ -17,7 +17,6 @@ import java.util.Map;
 @Component
 public class StudentFallBackFactory implements FallbackFactory<StudentClientService> {
 
-
     @Override
     public StudentClientService create(Throwable cause) {
         return new StudentClientService() {

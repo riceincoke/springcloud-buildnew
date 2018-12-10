@@ -15,8 +15,8 @@ eureka:
     register-with-eureka: true #向eureka注册自己
     registry-fetch-interval-seconds: 20 #获取清单间隔时间
     service-url:
-      defaultZone: http://${spring.cloud.client.ipAddress}:3001/eureka/  #本地server
-      #defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/   #把服务注册到eureka注册中心 集群
+      #defaultZone: http://${spring.cloud.client.ipAddress}:3001/eureka/  #本地server
+      defaultZone: http://192.168.88.104:3001/eureka/,http://192.168.88.106:3001/eureka/   #把服务注册到eureka注册中心 集群
 #actutor info 页面
 info:
   groupId: ${project.groupId}

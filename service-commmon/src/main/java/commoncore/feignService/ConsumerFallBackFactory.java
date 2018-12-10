@@ -1,24 +1,29 @@
+/*
 package commoncore.feignService;
 
 import commoncore.entity.Student;
 import feign.hystrix.FallbackFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+*/
 /**
  * @author 一杯咖啡
  * @desc
  * @createTime 2018-12-09-23:14
- */
+ *//*
+
+@Component
 public class ConsumerFallBackFactory implements FallbackFactory<StudentConsumerClient> {
     @Override
     public StudentConsumerClient create(Throwable cause) {
         return new StudentConsumerClient() {
             @Override
-            public Student findById(int id) {
+            public Student providerFindById(int id) {
                 System.out.println("consumer---findByid服务降级被调用");
                 Student student = new Student();
                 student.setId(id);
@@ -27,7 +32,7 @@ public class ConsumerFallBackFactory implements FallbackFactory<StudentConsumerC
             }
 
             @Override
-            public List<Student> findAll() {
+            public List<Student> providerFindAll() {
                 System.out.println("consumer---findAll服务降级被调用");
                 List<Student> mylist = new ArrayList<>();
                 Student student = new Student();
@@ -39,19 +44,19 @@ public class ConsumerFallBackFactory implements FallbackFactory<StudentConsumerC
             }
 
             @Override
-            public boolean deleteOne(int id) {
+            public boolean providerDeleteOne(int id) {
                 System.out.println("consumer---delete服务降级被调用");
                 return false;
             }
 
             @Override
-            public boolean insertOne(Student student) {
+            public boolean providerInsertOne() {
                 System.out.println("consumer---save服务降级被调用");
                 return false;
             }
 
             @Override
-            public Map<String, Object> getInfo() {
+            public Map<String, Object> getProviderInfo() {
                 System.out.println("consumer---factory,getInfo服务降级被调用");
                 Map<String, Object> map = new HashMap<>(2);
                 map.put("code", 500);
@@ -61,3 +66,4 @@ public class ConsumerFallBackFactory implements FallbackFactory<StudentConsumerC
         };
     }
 }
+*/

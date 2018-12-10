@@ -11,25 +11,25 @@ import java.util.Map;
  * @desc
  * @createTime 2018-12-09-23:09
  */
-@RequestMapping(value = "consumer")
+//@RequestMapping(value = "consumer")
 public interface StudentConsumerApi {
-    @GetMapping(value = "find/{id}")
+    @GetMapping(value = "/find/{id}")
     @ResponseBody
-    Student findById(@PathVariable(value = "id") int id);
+    Student providerFindById(@PathVariable(value = "id") int id);
 
-    @GetMapping(value = "findAll")
+    @GetMapping(value = "/findAll")
     @ResponseBody
-    List<Student> findAll();
+    List<Student> providerFindAll();
 
-    @GetMapping(value = "delete/{id}")
+    @GetMapping(value = "/delete/{id}")
     @ResponseBody
-    boolean deleteOne(@PathVariable(value = "id") int id);
+    boolean providerDeleteOne(@PathVariable(value = "id") int id);
 
-    @GetMapping(value = "save")
+    @GetMapping(value = "/save")
     @ResponseBody
-    boolean insertOne(@RequestBody Student student);
+    boolean providerInsertOne();
 
-    @GetMapping(value = "getInfo")
+    @GetMapping(value = "/getInfo")
     @ResponseBody
-    Map getInfo();
+    Map getProviderInfo();
 }

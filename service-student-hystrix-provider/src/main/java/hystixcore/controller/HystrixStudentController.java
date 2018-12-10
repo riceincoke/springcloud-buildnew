@@ -22,7 +22,7 @@ import java.util.Random;
  */
 @RestController
 public class HystrixStudentController implements StudentServiceApi {
-    @Value("${myinfo.name}")
+    @Value("${myInfo.name}")
     private String myInfo;
     private Integer couter = 0;
     @Autowired
