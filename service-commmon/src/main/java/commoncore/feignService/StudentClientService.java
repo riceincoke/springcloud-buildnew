@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.feign.FeignClient;
  * @desc feign 客户端  value,name 指定服务提供者的application.name
  * @createTime 2018-12-01-22:48
  */
-//@FeignClient(name = "student-hystrix-provider", fallbackFactory = StudentFallBackFactory.class)
-@FeignClient(name = "student-provider", fallbackFactory = StudentFallBackFactory.class)
+@FeignClient(name = "student-hystrix-provider", fallbackFactory = StudentFallBackFactory.class)
+//@FeignClient(name = "student-provider", fallbackFactory = StudentFallBackFactory.class)
 public interface StudentClientService extends StudentServiceApi {
 }

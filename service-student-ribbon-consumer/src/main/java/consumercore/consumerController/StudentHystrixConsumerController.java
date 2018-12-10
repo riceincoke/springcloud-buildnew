@@ -29,7 +29,7 @@ public class StudentHystrixConsumerController implements StudentConsumerApi {
 
     @Value("${info.provider}")
     private String appName;
-    @Value("${appLoaction}")
+    @Value("${serviceLocation}")
     private String PRE_HOST;
     @Autowired
     private RestTemplate restTemplate;

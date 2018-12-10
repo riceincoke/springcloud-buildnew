@@ -16,6 +16,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EntityScan(basePackages={"commoncore"})
 @EnableEurekaClient
+@EnableDiscoveryClient
 public class ProviderApp {
     public static void main(String[] args){
         SpringApplication.run(ProviderApp.class, args);
