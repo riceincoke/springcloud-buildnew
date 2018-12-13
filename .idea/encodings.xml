@@ -2,12 +2,15 @@
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/service-commmon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-config-server/src/main/resources/application.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-dashboard-turbine" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-eureka-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-feign-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-hystrix-dashboard" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-rabbitmq-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-stream-rabbit" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-student-hystrix-provider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-student-provider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-student-ribbon-consumer" charset="UTF-8" />

@@ -11,7 +11,7 @@
     <modules>
         <module>service-eureka-server</module>
         <module>service-student-provider</module>
-        <module>service-commmon</module>
+        <module>service-common</module>
         <module>service-student-ribbon-consumer</module>
         <module>service-student-hystrix-provider</module>
         <module>service-hystrix-dashboard</module>
@@ -19,6 +19,8 @@
         <module>service-feign-consumer</module>
         <module>service-zuul-api</module>
         <module>service-config-server</module>
+        <module>service-rabbitmq-server</module>
+        <module>service-stream-rabbit</module>
     </modules>
 
     <properties>
@@ -80,6 +82,11 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>springloaded</artifactId>
+        </dependency>
+        <!-- 消息总线，配合rabbitmq刷新配置-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
     </dependencies>
 

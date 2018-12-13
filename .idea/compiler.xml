@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="service-commmon" />
+        <module name="service-common" />
         <module name="service-config-server" />
         <module name="service-dashboard-turbine" />
         <module name="service-eureka-server" />
         <module name="service-feign-consumer" />
         <module name="service-hystrix-dashboard" />
+        <module name="service-rabbitmq-server" />
+        <module name="service-stream-rabbit" />
         <module name="service-student-hystrix-provider" />
         <module name="service-student-provider" />
         <module name="service-student-ribbon-consumer" />

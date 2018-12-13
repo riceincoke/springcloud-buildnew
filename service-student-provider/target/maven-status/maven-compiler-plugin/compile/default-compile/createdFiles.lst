@@ -1,5 +1,0 @@
-providercore\services\StudentService.class
-providercore\dao\StudentRepository.class
-providercore\services\IService.class
-providercore\ProviderApp.class
-providercore\controller\StudentController.class

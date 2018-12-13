@@ -1,7 +1,6 @@
 package feigncore.controllers;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import commoncore.entity.Student;
 import commoncore.feignService.StudentClientService;
 import commoncore.serviceApi.StudentConsumerApi;
@@ -41,8 +40,7 @@ public class FeignController implements StudentConsumerApi {
      * desc: 查询所有
      **/
     @Override
-    @HystrixCommand(fallbackMethod = "fallFindAll",groupKey = "findAll", threadPoolKey = "feign-consumer",
-            commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000")})
+    @HystrixCommand(fallbackMethod = "fallFindAll",groupKey = "findAll", threadPoolKey = "feign-consumer")
     public List<Student> providerFindAll() {
         System.out.println("feign-consumer--findall 方法调用");
         return studentClientService.findAll();
@@ -68,7 +66,7 @@ public class FeignController implements StudentConsumerApi {
     }
 
     @Override
-    @HystrixCommand(fallbackMethod = "getFallInfo",threadPoolKey = "getInfo",groupKey = "feign-consumer",commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000")})
+    @HystrixCommand(fallbackMethod = "getFallInfo",threadPoolKey = "getInfo",groupKey = "feign-consumer")
     public Map<String, Object> getProviderInfo() {
         return studentClientService.getInfo();
     }
